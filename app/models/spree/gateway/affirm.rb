@@ -4,6 +4,8 @@ module Spree
     preference :secret_key, :string
     preference :server, :string, default: 'www.affirm.com'
 
+    attr_accessible :preferred_api_key, :preferred_secret_key
+
     def provider_class
       ActiveMerchant::Billing::Affirm
     end

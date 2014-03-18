@@ -33,10 +33,10 @@ if(typeof AffirmPaymentMethods === "undefined")
 var affirm_checkout_data = {
     checkout_id:          "<%= @order.number %>",
     currency:             "USD",
-    shipping_amount:      <%= @order.shipment_total * 100 %>,
+    shipping_amount:      <%= @order.ship_total * 100 %>,
     shipping_type:        "<%= @order.shipments.first.shipping_method.name if @order.shipments %>",
-    tax_amount:           <%= @order.additional_tax_total * 100 %>,
-    misc_fee_amount:      <%= (@order.adjustment_total - @order.additional_tax_total) * 100 %>,
+    tax_amount:           <%= @order.tax_total * 100 %>,
+    misc_fee_amount:      <%= (@order.adjustment_total - @order.tax_total) * 100 %>,
     discount_code:        "<%= @order.coupon_code %>",
 
     shipping: {

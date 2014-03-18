@@ -16,7 +16,7 @@ module Spree
       affirm_payment = order.payments.create!({
         :amount => order.total,
         :payment_method => payment_method
-      })
+      }, :without_protection => true)
       charge_token = params[:charge_token]
       #dangerous... but this seems the least intrusive
       #we don't want to pollute other payments with this source

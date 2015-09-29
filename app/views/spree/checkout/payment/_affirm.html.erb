@@ -25,7 +25,7 @@
       tax_amount:           <%= (@order.tax_total * 100).to_i %>,
       checkout_id:          "<%= @order.number %>",
       discount_code:        "<%= @order.coupon_code %>",
-      shipping_type:        "<%= @order.shipments.first.shipping_method.name if @order.shipments %>",
+      shipping_type:        "<%= @order.shipments.first.shipping_method.name if @order.shipments && @order.shipments.count > 0 %>",
       shipping_amount:      <%= (@order.shipment_total * 100).to_i %>,
 
       shipping: {

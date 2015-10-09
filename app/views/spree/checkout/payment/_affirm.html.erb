@@ -97,7 +97,7 @@
           <% end %>
 
           qty:           <%= item.quantity %>,
-          sku:           "<%= item.variant.sku %>",
+          sku:           "<%= item.variant.sku || item.variant.id %>",
           item_url:      "<%= product_url(item.product) %>",
           unit_price:    <%= item.price * 100 %>,
           display_name:  "<%= raw(item.variant.product.name) %>"

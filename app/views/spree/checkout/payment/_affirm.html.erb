@@ -100,7 +100,7 @@
           sku:           "<%= item.variant.sku %>",
           item_url:      "<%= product_url(item.product) %>",
           unit_price:    <%= item.price * 100 %>,
-          display_name:  "<%= raw(item.variant.product.name) %>"
+          display_name:  "<%= raw(item.variant.product.name.gsub('"', '')) %>"
         },
         <% end %>
       ]

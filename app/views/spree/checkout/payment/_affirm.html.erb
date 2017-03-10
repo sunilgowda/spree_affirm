@@ -69,8 +69,8 @@
       },
 
       merchant: {
-        user_confirmation_url:    "<%= confirm_affirm_url(:payment_method_id => payment_method.id, :shipping_method => params[:shipping_method]) %>",
-        user_cancel_url:          "<%= cancel_affirm_url(:payment_method_id => payment_method.id, :shipping_method => params[:shipping_method]) %>",
+        user_confirmation_url:    "<%= confirm_affirm_url(:payment_method_id => payment_method.id, :shipping_method => params[:shipping_method]).html_safe  %>",
+        user_cancel_url:          "<%= cancel_affirm_url(:payment_method_id => payment_method.id, :shipping_method => params[:shipping_method]).html_safe  %>",
       },
 
       config: {

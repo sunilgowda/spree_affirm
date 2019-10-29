@@ -22,7 +22,6 @@ module Spree
       check_matching_shipping_address
       check_matching_billing_address
       check_matching_billing_email
-      check_matching_product_key
     end
 
     def check_valid_products
